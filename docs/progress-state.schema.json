@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["skill_name", "skill_type", "skill_types", "learning_mode", "current_phase", "subskills"],
+  "properties": {
+    "skill_name": {"type": "string", "minLength": 1},
+    "skill_type": {"enum": ["procedural", "knowledge", "social", "hybrid"]},
+    "skill_types": {"type": "array", "minItems": 1, "items": {"enum": ["procedural", "knowledge", "social", "hybrid"]}},
+    "learning_mode": {"enum": ["", "learn", "learn_retain"]},
+    "current_phase": {"enum": ["decompose", "cognitive", "associative", "autonomous", "retention", "completed"]},
+    "subskills": {"type": "array"},
+    "baseline_retention_score": {"type": ["number", "null"]},
+    "best_retention_score": {"type": ["number", "null"]},
+    "completed_at": {"type": ["string", "null"]},
+    "privacy_policy": {"enum": ["full", "summary", "hash_only"]}
+  }
+}

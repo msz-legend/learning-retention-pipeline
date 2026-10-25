@@ -1,0 +1,17 @@
+{
+  "schema_version": "0.1.0",
+  "state_id": "{{safe-skill-id}}",
+  "skill_name": "{{skill-name}}",
+  "skill_type": "hybrid",
+  "skill_types": ["hybrid"],
+  "learning_mode": "",
+  "current_phase": "decompose",
+  "subskills": [],
+  "baseline_retention_score": null,
+  "best_retention_score": null,
+  "held_out_tasks": [],
+  "wiki_log_path": "",
+  "completed_at": null,
+  "upgrade_history": [],
+  "privacy_policy": "summary"
+}

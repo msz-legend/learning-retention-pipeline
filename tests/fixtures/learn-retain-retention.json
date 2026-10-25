@@ -1,0 +1,1 @@
+{"state_id":"fixture-retain","skill_name":"Example","skill_type":"hybrid","skill_types":["hybrid"],"learning_mode":"learn_retain","current_phase":"retention","subskills":[],"baseline_retention_score":0.8,"best_retention_score":0.8,"held_out_tasks":[{"id":"h1"},{"id":"h2"},{"id":"h3"}]}

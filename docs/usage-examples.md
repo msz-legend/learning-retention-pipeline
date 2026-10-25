@@ -17,9 +17,11 @@
 ## 本地 CLI
 
 ```text
-python learning-retention-pipeline/scripts/lrp.py init "Python data analysis" --context '{"goal":"complete a real analysis"}'
-python learning-retention-pipeline/scripts/lrp.py load python-data-analysis
-python learning-retention-pipeline/scripts/validate-state.py path/to/progress-state.json
+python scripts/lrp.py init "Python data analysis" --context '{"goal":"complete a real analysis"}'
+python scripts/lrp.py load python-data-analysis
+python scripts/validate-state.py path/to/progress-state.json
 ```
+
+> Windows PowerShell 用户注意：上面 `--context` 里的双引号在 PowerShell 原生命令调用中需要转义为 `\"`，否则 JSON 解析会报 `Expecting property name enclosed in double quotes`。最简单的做法是省略 `--context`（默认 `'{}'`）。bash、zsh 与 cmd 可按示例原样执行。
 
 运行状态默认存储在用户数据目录；设置 `LRP_DATA_DIR` 可覆盖。Skill 文档负责自然语言交互，CLI 只负责确定性状态操作。

@@ -1,4 +1,4 @@
----
+﻿---
 name: learning-retention-pipeline
 description: >-
   Learn a skill from zero through decomposition, retrieval practice, variation,
@@ -18,22 +18,22 @@ Ask at most three questions per reply and collect, over successive turns: the ta
 - **learn**: reach independent real-task use, then stop. No retention queue, reminder, retention test, or `retention_due` after completion.
 - **learn_retain**: reach independent use, establish at least three held-out tasks and a baseline, then continue with the minimum effective dose.
 
-There is no default mode. Build 3–5 observable subskills with dependencies and acceptance criteria. Run structural validation, show the decomposition, accept user edits, validate again, and wait for overall confirmation before practice.
+There is no default mode. Build 3鈥? observable subskills with dependencies and acceptance criteria. Run structural validation, show the decomposition, accept user edits, validate again, and wait for overall confirmation before practice.
 
 ## Practice contract
 
-One practice turn assigns one task. The learner must output or produce evidence before feedback. Do not open with a summary, answer, or complete demonstration. Give no more than two key errors, record error patterns, and ask for a retry or transfer task. “I understand” and reading do not increase mastery.
+One practice turn assigns one task. The learner must output or produce evidence before feedback. Do not open with a summary, answer, or complete demonstration. Give no more than two key errors, record error patterns, and ask for a retry or transfer task. 鈥淚 understand鈥?and reading do not increase mastery.
 
 - **cognitive**: brief demonstration only after the learner's first attempt; correct the most important gaps.
 - **associative**: schedule retrieval with spacing, variation, and interleaving; dependency gates block downstream work.
 - **autonomous**: use a realistic task with configurable time pressure, no-reference, explanation, or public-output conditions. Preserve the output evidence.
 - **retention** (`learn_retain` only): check due work in-session, prioritize an untimed prompt when due, allow postponement without faking success, and use held-out tests.
 
-Use the deterministic scoring contract: criteria ratio minus up to 0.20 for two critical errors; completion weights are 1.00 unprompted, 0.85 light prompt, 0.70 after demonstration, and 0.60 retry. Recent valid attempts use 0.5/0.3/0.2 weighting. Save structured evidence and append the Wiki; never rewrite Wiki history.
+Use the deterministic scoring contract: criteria ratio minus up to 0.20 for two critical errors; completion weights are 1.00 unprompted, 0.85 light prompt, 0.70 after demonstration, and 0.60 retry. Recent valid attempts use 0.5/0.3/0.2 weighting. Save structured evidence and append the Wiki; never rewrite Wiki history. Store `wiki_log_path` as a POSIX-relative path inside the skill state directory; hosts resolve it as `data_dir/skills/<state_id>/<path>` on Windows, Linux, and macOS, and legacy absolute values resolve as-is.
 
 ## Signals and recovery
 
-Interpret “太难了” as smaller difficulty, “太简单了” as a variation, “没时间” as a shorter task or a postponement, “暂停” as saved state without phase loss, “继续” as a one-sentence resume summary plus one default task, and “我学到哪了” as a natural-language progress answer. A paused associative or retention session resumes with a low-barrier retrieval task. Do not re-ask onboarding questions.
+Interpret 鈥滃お闅句簡鈥?as smaller difficulty, 鈥滃お绠€鍗曚簡鈥?as a variation, 鈥滄病鏃堕棿鈥?as a shorter task or a postponement, 鈥滄殏鍋溾€?as saved state without phase loss, 鈥滅户缁€?as a one-sentence resume summary plus one default task, and 鈥滄垜瀛﹀埌鍝簡鈥?as a natural-language progress answer. A paused associative or retention session resumes with a low-barrier retrieval task. Do not re-ask onboarding questions.
 
 Only explicit confirmation changes mode. Upgrade from completed `learn` requires three new held-out tasks and a new baseline. Downgrade from `learn_retain` preserves history but stops future retention scheduling and enters completed `learn`.
 

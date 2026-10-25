@@ -1,5 +1,5 @@
-"""Learning-to-Retention Pipeline deterministic runtime."""
+﻿"""Learning-to-Retention Pipeline deterministic runtime."""
 
-from .state import StateStore, StateValidationError
+from .state import StateLockTimeout, StateStore, StateValidationError
 
-__all__ = ["StateStore", "StateValidationError"]
+__all__ = ["StateStore", "StateValidationError", "StateLockTimeout"]
